@@ -593,6 +593,27 @@
       .statement-box{min-height:360px}
       .form-actions .btn{width:100%}
     }
+  
+    /* Dynamische uitbreidingen */
+    .hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
+    .hero-bg-slide{position:absolute;inset:-5%;background-size:cover;background-position:center;opacity:0;transform:scale(1.08);animation:heroCrossfade 24s infinite;filter:saturate(.9) contrast(1.02)}
+    .hero-bg-slide:nth-child(1){background-image:linear-gradient(rgba(10,15,23,.74),rgba(10,15,23,.88)),url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=82');animation-delay:0s}
+    .hero-bg-slide:nth-child(2){background-image:linear-gradient(rgba(10,15,23,.72),rgba(10,15,23,.88)),url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=2000&q=82');animation-delay:8s}
+    .hero-bg-slide:nth-child(3){background-image:linear-gradient(rgba(10,15,23,.72),rgba(10,15,23,.88)),url('https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=2000&q=82');animation-delay:16s}
+    @keyframes heroCrossfade{0%{opacity:0;transform:scale(1.08)}8%{opacity:1}30%{opacity:1;transform:scale(1.01) translate3d(-1%,1%,0)}40%{opacity:0}100%{opacity:0}}
+    .hero .container{position:relative;z-index:2}.hero:after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(circle at 75% 25%,rgba(242,195,95,.2),transparent 28%)}
+    [data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}[data-reveal].visible{opacity:1;transform:none}
+    .stats-bar{margin-top:-34px;position:relative;z-index:5}.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);overflow:hidden}.stat{text-align:center;padding:25px 16px;border-right:1px solid var(--line)}.stat:last-child{border-right:0}.stat strong{display:block;font-size:2rem;line-height:1;color:var(--dark)}.stat span{display:block;color:var(--muted);margin-top:8px;font-size:.9rem}
+    .projects-toolbar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}.filter-btn{border:1px solid var(--line);background:#fff;padding:10px 14px;border-radius:999px;font-weight:800}.filter-btn.active,.filter-btn:hover{background:var(--dark);color:#fff;border-color:var(--dark)}
+    .project-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}.project-card{grid-column:span 4;min-height:310px;position:relative;border-radius:22px;overflow:hidden;box-shadow:var(--shadow);cursor:pointer;background:#ddd;transition:transform .3s ease,opacity .3s ease}.project-card.wide{grid-column:span 8}.project-card.hidden{display:none}.project-card:hover{transform:translateY(-6px)}.project-card img{width:100%;height:100%;object-fit:cover;transition:transform .55s ease}.project-card:hover img{transform:scale(1.08)}.project-overlay{position:absolute;inset:0;display:flex;align-items:flex-end;padding:22px;color:#fff;background:linear-gradient(to top,rgba(5,10,18,.9),rgba(5,10,18,.02) 65%)}.project-overlay small{color:var(--accent-2);text-transform:uppercase;letter-spacing:.08em;font-weight:900}.project-overlay h3{margin:5px 0 0;font-size:1.35rem}.project-badge{position:absolute;top:14px;right:14px;padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.9);color:var(--dark);font-size:.78rem;font-weight:900}
+    .review-shell{position:relative;overflow:hidden}.review-track{display:flex;transition:transform .55s cubic-bezier(.2,.7,.2,1)}.review-slide{min-width:100%;padding:2px}.review-card{max-width:850px;margin:auto;background:#fff;border:1px solid var(--line);border-radius:24px;padding:34px;box-shadow:var(--shadow);text-align:center;color:var(--ink)}.stars{color:var(--accent);font-size:1.3rem;letter-spacing:.14em}.review-card blockquote{margin:18px auto;font-size:clamp(1.2rem,2.5vw,1.7rem);line-height:1.45;font-weight:750;max-width:720px}.review-card p{margin:0;color:var(--muted)}.review-controls{display:flex;justify-content:center;gap:10px;margin-top:18px}.review-controls button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:#fff;font-weight:900}
+    .compare{display:grid;grid-template-columns:1fr 1fr;border-radius:24px;overflow:hidden;box-shadow:var(--shadow);min-height:440px}.compare-panel{position:relative;overflow:hidden}.compare-panel img{width:100%;height:100%;object-fit:cover}.compare-label{position:absolute;left:18px;bottom:18px;background:rgba(17,24,39,.9);color:#fff;padding:9px 13px;border-radius:10px;font-weight:850}
+    .floating-cta{position:fixed;right:20px;bottom:20px;z-index:45;border:0;border-radius:999px;padding:14px 18px;background:var(--accent);color:#111;font-weight:900;box-shadow:0 14px 35px rgba(0,0,0,.24);transition:.2s ease}.floating-cta:hover{transform:translateY(-3px)}
+    .lightbox{position:fixed;inset:0;z-index:120;background:rgba(3,7,18,.9);display:none;align-items:center;justify-content:center;padding:24px}.lightbox.open{display:flex}.lightbox img{max-width:min(1100px,95vw);max-height:82vh;border-radius:18px;box-shadow:var(--shadow)}.lightbox-close{position:absolute;top:20px;right:22px;width:46px;height:46px;border:0;border-radius:50%;font-size:1.5rem;background:#fff}
+    @media(max-width:900px){.stats-grid{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}.project-card,.project-card.wide{grid-column:span 6}}
+    @media(max-width:680px){.stats-bar{margin-top:-20px}.project-card,.project-card.wide{grid-column:1/-1;min-height:260px}.compare{grid-template-columns:1fr;min-height:620px}.floating-cta{left:16px;right:16px;text-align:center}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}[data-reveal]{opacity:1;transform:none}}
+
   </style>
 </head>
 <body>
@@ -611,6 +632,7 @@
       <nav class="navlinks" aria-label="Hoofdnavigatie">
         <a href="#waarom">Waarom wij</a>
         <a href="#diensten">Diensten</a>
+        <a href="#realisaties">Realisaties</a>
         <a href="#aanpak">Aanpak</a>
         <a href="#service">Service</a>
         <a href="#contact">Project starten</a>
@@ -625,6 +647,7 @@
       <div class="mobile-menu" id="mobileMenu">
         <a href="#waarom">Waarom wij</a>
         <a href="#diensten">Diensten</a>
+        <a href="#realisaties">Realisaties</a>
         <a href="#aanpak">Aanpak</a>
         <a href="#service">Service</a>
         <a href="#contact">Project starten</a>
@@ -633,7 +656,7 @@
   </header>
 
   <main>
-    <section class="hero" id="home">
+    <section class="hero" id="home"><div class="hero-bg" aria-hidden="true"><div class="hero-bg-slide"></div><div class="hero-bg-slide"></div><div class="hero-bg-slide"></div></div>
       <div class="container hero-grid">
         <div>
           <div class="eyebrow">Totaalrenovatie met controle en opvolging</div>
@@ -674,6 +697,7 @@
       </div>
     </section>
 
+<div class="stats-bar" data-reveal><div class="container"><div class="stats-grid"><div class="stat"><strong data-counter="1">0</strong><span>centraal aanspreekpunt</span></div><div class="stat"><strong data-counter="9">0</strong><span>renovatiedisciplines</span></div><div class="stat"><strong data-counter="4">0</strong><span>werkdagen tot eerste feedback</span></div><div class="stat"><strong data-counter="100" data-suffix="%">0</strong><span>focus op opvolging en nazorg</span></div></div></div></div>
     <section id="waarom">
       <div class="container">
         <div class="section-head">
@@ -685,19 +709,19 @@
         </div>
 
         <div class="proof-grid">
-          <article class="proof">
+          <article class="proof" data-reveal>
             <strong>Service als hoofdzaak</strong>
             <p>Een renovatie stopt niet bij de oplevering. Nazorg, bereikbaarheid en correcte garantieafhandeling horen bij het werk.</p>
           </article>
-          <article class="proof">
+          <article class="proof" data-reveal>
             <strong>Lokale werkkracht</strong>
             <p>We geven voorrang aan betrouwbare ondernemingen uit de regio en ondersteunen zo kennis, werkgelegenheid en lokale economie.</p>
           </article>
-          <article class="proof">
+          <article class="proof" data-reveal>
             <strong>Heldere samenwerking</strong>
             <p>U kan rechtstreeks overleggen met de vakspecialist of alle communicatie centraal via ons platform laten verlopen.</p>
           </article>
-          <article class="proof">
+          <article class="proof" data-reveal>
             <strong>Geen louche aannemers</strong>
             <p>Partners worden geselecteerd op ervaring, administratie, service, garanties en correcte uitvoering van afspraken.</p>
           </article>
@@ -736,7 +760,7 @@
         </div>
 
         <div class="service-grid">
-          <article class="service-card">
+          <article class="service-card" data-reveal>
             <div class="service-num">01</div>
             <h3>Totaalrenovatie & projectaanpak</h3>
             <p>Woningen, appartementen, horeca, handelszaken en praktijkruimtes van eerste idee tot oplevering.</p>
@@ -744,7 +768,7 @@
             <div class="service-extra">Inclusief keukens, badkamers, maatwerk meubilair, haarden, tv-kasten, interieurafwerking en gecoördineerde uitvoering.</div>
           </article>
 
-          <article class="service-card">
+          <article class="service-card" data-reveal>
             <div class="service-num">02</div>
             <h3>Ruwbouw & structurele werken</h3>
             <p>Afbraak, dragende aanpassingen, metselwerk, dakwerken, stabiliteit en zolderrenovaties.</p>
@@ -752,7 +776,7 @@
             <div class="service-extra">Waar nodig werken we samen met architecten, stabiliteitsingenieurs en gespecialiseerde uitvoerders.</div>
           </article>
 
-          <article class="service-card">
+          <article class="service-card" data-reveal>
             <div class="service-num">03</div>
             <h3>Technieken, energie & comfort</h3>
             <p>Elektriciteit, verwarming, warmtepompen, gas, airco, ventilatie, sanitair en slimme sturingen.</p>
@@ -760,7 +784,7 @@
             <div class="service-extra">Technieken worden afgestemd op gebouw, gebruik, onderhoud, energieverbruik en latere uitbreidingsmogelijkheden.</div>
           </article>
 
-          <article class="service-card">
+          <article class="service-card" data-reveal>
             <div class="service-num">04</div>
             <h3>Binnenafwerking & interieur</h3>
             <p>Gyproc, plafonds, pleisterwerken, schilderwerken, vloeren, trappen en maatwerk.</p>
@@ -768,7 +792,7 @@
             <div class="service-extra">Afwerking wordt technisch afgestemd op verlichting, technieken, akoestiek en interieurarchitectuur.</div>
           </article>
 
-          <article class="service-card">
+          <article class="service-card" data-reveal>
             <div class="service-num">05</div>
             <h3>Badkamers & sanitair</h3>
             <p>Volledige badkamerrenovatie met aandacht voor leidingen, waterdichting, ventilatie en afwerking.</p>
@@ -776,7 +800,7 @@
             <div class="service-extra">Van afbraak en technieken tot tegelwerk, inloopdouche, badkamermeubel en finale oplevering.</div>
           </article>
 
-          <article class="service-card">
+          <article class="service-card" data-reveal>
             <div class="service-num">06</div>
             <h3>Zelfbouw met begeleiding</h3>
             <p>Zelf uitvoeren waar het kan, vakmensen inschakelen waar het moet.</p>
@@ -784,7 +808,7 @@
             <div class="service-extra">U bespaart op arbeidsuren, terwijl kritische fases, technische keuzes en controles professioneel ondersteund blijven.</div>
           </article>
 
-          <article class="service-card">
+          <article class="service-card" data-reveal>
             <div class="service-num">07</div>
             <h3>Werfcoördinatie</h3>
             <p>Planning, afstemming, kwaliteitscontrole en een optionele vaste werfcoördinator.</p>
@@ -792,7 +816,7 @@
             <div class="service-extra">Beslissingen, aandachtspunten en werkbesprekingen worden digitaal bijgehouden om discussies achteraf te vermijden.</div>
           </article>
 
-          <article class="service-card">
+          <article class="service-card" data-reveal>
             <div class="service-num">08</div>
             <h3>Architectuur & studies</h3>
             <p>Architect, interieurarchitect, tuinarchitect, EPB, EPC, veiligheid en ingenieursstudies.</p>
@@ -800,7 +824,7 @@
             <div class="service-extra">Ontwerp, regelgeving, berekeningen en uitvoering worden in één traject op elkaar afgestemd.</div>
           </article>
 
-          <article class="service-card">
+          <article class="service-card" data-reveal>
             <div class="service-num">09</div>
             <h3>Buitenaanleg</h3>
             <p>Terrassen, opritten, riolering, afwatering, tuinverlichting en aansluitende werken.</p>
@@ -810,6 +834,10 @@
         </div>
       </div>
     </section>
+
+
+    <section class="section-soft" id="realisaties"><div class="container"><div class="section-head" data-reveal><div class="eyebrow">Projectinspiratie</div><h2>Renovaties die techniek, comfort en afwerking samenbrengen.</h2><p>Onderstaande beelden zijn voorlopig representatieve sfeerbeelden. Echte realisaties worden later toegevoegd met projectinformatie, betrokken vakmensen en uitgevoerde technieken.</p></div><div class="projects-toolbar" data-reveal><button class="filter-btn active" data-filter="all">Alles</button><button class="filter-btn" data-filter="interieur">Interieur</button><button class="filter-btn" data-filter="badkamer">Badkamers</button><button class="filter-btn" data-filter="keuken">Keukens</button><button class="filter-btn" data-filter="buiten">Buiten</button></div><div class="project-grid"><article class="project-card wide" data-category="interieur" data-reveal><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=82" alt="Modern gerenoveerd interieur" loading="lazy"><span class="project-badge">Conceptbeeld</span><div class="project-overlay"><div><small>Interieur & maatwerk</small><h3>Leefruimte met geïntegreerde technieken</h3></div></div></article><article class="project-card" data-category="badkamer" data-reveal><img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=1000&q=82" alt="Moderne badkamerrenovatie" loading="lazy"><span class="project-badge">Conceptbeeld</span><div class="project-overlay"><div><small>Badkamer</small><h3>Waterdichting, sanitair en afwerking</h3></div></div></article><article class="project-card" data-category="keuken" data-reveal><img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1000&q=82" alt="Keukenrenovatie met maatwerk" loading="lazy"><span class="project-badge">Conceptbeeld</span><div class="project-overlay"><div><small>Keuken</small><h3>Maatwerk en functionele inrichting</h3></div></div></article><article class="project-card wide" data-category="buiten" data-reveal><img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=1400&q=82" alt="Gerenoveerde woning en buitenaanleg" loading="lazy"><span class="project-badge">Conceptbeeld</span><div class="project-overlay"><div><small>Totaalrenovatie</small><h3>Van gebouwschil tot buitenaanleg</h3></div></div></article></div></div></section>
+    <section><div class="container"><div class="section-head" data-reveal><div class="eyebrow">Voor en na</div><h2>Een renovatie maakt pas indruk wanneer het geheel klopt.</h2><p>De juiste volgorde, materiaalkeuze en vakmensen maken het verschil tussen enkel vernieuwen en werkelijk verbeteren.</p></div><div class="compare" data-reveal><div class="compare-panel"><img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1100&q=82" alt="Ruimte voor renovatie" loading="lazy"><span class="compare-label">Voor: potentieel en technische analyse</span></div><div class="compare-panel"><img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1100&q=82" alt="Afgewerkt interieur na renovatie" loading="lazy"><span class="compare-label">Na: samenhang, comfort en afwerking</span></div></div></div></section>
 
     <section class="section-dark" id="aanpak">
       <div class="container">
@@ -838,7 +866,7 @@
         </div>
 
         <div class="aftercare">
-          <article class="aftercare-card highlight">
+          <article class="aftercare-card highlight" data-reveal>
             <h3>Service is geen extra optie.</h3>
             <p>We selecteren uitvoerders niet alleen op hun technische werk, maar ook op bereikbaarheid, administratie, garantieafhandeling en bereidheid om problemen correct op te lossen.</p>
             <div class="checklist">
@@ -849,7 +877,7 @@
             </div>
           </article>
 
-          <article class="aftercare-card">
+          <article class="aftercare-card" data-reveal>
             <h3>Een netwerk met draagkracht</h3>
             <p>Een individuele aannemer kan ziek worden, tijdelijk overbelast zijn of door overmacht uitvallen. Een sterk netwerk maakt het mogelijk sneller te schakelen en de continuïteit van uw project beter te beschermen.</p>
             <p>Dat betekent niet dat aannemers zomaar onderling uitwisselbaar zijn. Het betekent wel dat u niet volledig alleen staat wanneer er onverwacht iets gebeurt.</p>
@@ -858,6 +886,7 @@
       </div>
     </section>
 
+<section class="section-dark" id="reviews"><div class="container"><div class="section-head" data-reveal><div class="eyebrow">Klanten aan het woord</div><h2>Goede service merk je vooral wanneer er iets opgevolgd moet worden.</h2><p>De onderstaande recensies zijn demonstratieteksten voor de website-opbouw en moeten voor publicatie vervangen worden door echte, verifieerbare klantbeoordelingen.</p></div><div class="review-shell" data-reveal><div class="review-track" id="reviewTrack"><div class="review-slide"><article class="review-card"><div class="stars">★★★★★</div><blockquote>“We hadden rechtstreeks contact met de vakmensen, maar toch bleef één persoon het volledige overzicht bewaren. Dat gaf rust.”</blockquote><p>Voorbeeldrecensie — totaalrenovatie woning</p></article></div><div class="review-slide"><article class="review-card"><div class="stars">★★★★★</div><blockquote>“De offerte was helder opgesplitst. Toen er na de oplevering nog een kleine regeling nodig was, werd die zonder discussie opgevolgd.”</blockquote><p>Voorbeeldrecensie — badkamer en technieken</p></article></div><div class="review-slide"><article class="review-card"><div class="stars">★★★★★</div><blockquote>“We konden zelf een deel uitvoeren en kregen ondersteuning op de technische momenten waar fouten duur zouden worden.”</blockquote><p>Voorbeeldrecensie — begeleide zelfbouw</p></article></div></div><div class="review-controls"><button type="button" id="reviewPrev" aria-label="Vorige recensie">←</button><button type="button" id="reviewNext" aria-label="Volgende recensie">→</button></div></div></div></section>
     <section class="section-soft">
       <div class="container">
         <div class="section-head">
@@ -984,7 +1013,7 @@
     </section>
   </main>
 
-  <footer>
+  <a class="floating-cta" href="#contact">Start uw renovatieaanvraag</a><div class="lightbox" id="lightbox" aria-hidden="true"><button class="lightbox-close" id="lightboxClose" aria-label="Afbeelding sluiten">×</button><img id="lightboxImage" src="" alt=""></div><footer>
     <div class="container footer-grid">
       <div>
         <div class="brand">
@@ -1083,6 +1112,13 @@
     const mobileMenu = document.getElementById('mobileMenu');
     menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
     mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+    const revealObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');revealObserver.unobserve(entry.target)}})},{threshold:.12});document.querySelectorAll('[data-reveal]').forEach(el=>revealObserver.observe(el));
+    const counterObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(!entry.isIntersecting)return;const el=entry.target,target=Number(el.dataset.counter),suffix=el.dataset.suffix||'',start=performance.now(),duration=1100;function tick(now){const progress=Math.min((now-start)/duration,1);el.textContent=Math.round(target*(1-Math.pow(1-progress,3)))+suffix;if(progress<1)requestAnimationFrame(tick)}requestAnimationFrame(tick);counterObserver.unobserve(el)})},{threshold:.7});document.querySelectorAll('[data-counter]').forEach(el=>counterObserver.observe(el));
+    document.querySelectorAll('.filter-btn').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const filter=btn.dataset.filter;document.querySelectorAll('.project-card').forEach(card=>card.classList.toggle('hidden',filter!=='all'&&card.dataset.category!==filter))}));
+    const lightbox=document.getElementById('lightbox'),lightboxImage=document.getElementById('lightboxImage');document.querySelectorAll('.project-card img').forEach(img=>img.closest('.project-card').addEventListener('click',()=>{lightboxImage.src=img.src;lightboxImage.alt=img.alt;lightbox.classList.add('open');lightbox.setAttribute('aria-hidden','false')}));function closeLightbox(){lightbox.classList.remove('open');lightbox.setAttribute('aria-hidden','true')}document.getElementById('lightboxClose').addEventListener('click',closeLightbox);lightbox.addEventListener('click',e=>{if(e.target===lightbox)closeLightbox()});
+    let reviewIndex=0;const reviewTrack=document.getElementById('reviewTrack'),reviewCount=reviewTrack.children.length;function showReview(index){reviewIndex=(index+reviewCount)%reviewCount;reviewTrack.style.transform=`translateX(-${reviewIndex*100}%)`}document.getElementById('reviewPrev').addEventListener('click',()=>showReview(reviewIndex-1));document.getElementById('reviewNext').addEventListener('click',()=>showReview(reviewIndex+1));setInterval(()=>showReview(reviewIndex+1),6500);
+
   </script>
 </body>
 </html>
